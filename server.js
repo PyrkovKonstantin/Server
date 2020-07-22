@@ -4,14 +4,18 @@ http.createServer((request,response)=>{
     
     response.writeHead(200, {"Content-type":"application/json"});
     if(request.method === 'GET' && request.url == '/ping'){
-        var obj = {
+        var msg = {
             message: 'pong'
         };
-        response.end(JSON.stringify(obj));
+        response.end(JSON.stringify(msg));
     }
     else{
-        response.writeHead(404, {"Content-type":"text/plain"});
-        response.end("Not Found");
+        response.writeHead(404, {"Content-type":"application/json"});
+        var err = {
+            Error: 'Not Found'
+        };
+        response.end(JSON.stringify(err))
+        
     }
   
     response.end();
