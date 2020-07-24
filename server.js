@@ -2,9 +2,9 @@ const http = require('http');
 
 http.createServer((request,response)=>{
     
-    response.writeHead(200, {"Content-type":"application/json"});
+    response.writeHead(200, {"Content-type":"application/json"});  // не пиши заголовки то того как определишься с ответом
     if(request.method === 'GET' && request.url == '/ping'){
-        var msg = {
+        var msg = {                   //используй либо const либо let, let везде где нельзя использовать const, всегда пытайся определять через const
             message: 'pong'
         };
         response.end(JSON.stringify(msg));//Message
