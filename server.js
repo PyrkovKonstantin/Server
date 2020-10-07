@@ -7,14 +7,14 @@ http.createServer((request,response)=>{
         var msg = {
             message: 'pong'
         };
-        response.end(JSON.stringify(msg));//Message
+        response.end(JSON.stringify(msg));
     }
     else{
         response.writeHead(404, {"Content-type":"application/json"});
         var err = {
             Error: 'Not Found'
         };
-        response.end(JSON.stringify(err))//Error
+        response.end(JSON.stringify(err))
         
     }
   
